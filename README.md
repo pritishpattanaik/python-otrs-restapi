@@ -7,7 +7,7 @@ Over last few years I have been using OTRS heavily. Recently i used Python to in
 
 ### Set up otrsconfig.py
 
-```
+```python
 config = {
     'user'  : 'otrsuser', 
     'pw':   'otrspw',
