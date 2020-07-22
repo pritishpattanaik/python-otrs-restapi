@@ -5,7 +5,9 @@ OTRS is a service management suite. The suite contains an agent portal, admin da
 
 Over last few years I have been using OTRS heavily. Recently i used Python to interact with OTRS web services. This guide will let you utilise OTRS web services as a provider. This code is writtenin Python 3. 
 
-# Set up otrsconfig.py 
+### Set up otrsconfig.py
+
+```
 config = {
     'user'  : 'otrsuser', 
     'pw':   'otrspw',
@@ -15,10 +17,11 @@ config = {
     'createticketroute': '/Ticket/TicketCreate', # Ticket Create 
 }
 
-# example code to use Python warapper for OTRS 5 API 
-# import otrsapi and otrsconfig module
+```
 
+### example code to use Python warapper for OTRS 5 APIimport otrsapi and otrsconfig module
 
+```
 import requests
 from otrsconfig import config
 from pprint import pprint
@@ -33,11 +36,11 @@ session.ticketget( { 'TicketID': '6' } )
 # create Ticket
 ticket = {
  'Ticket': { 
-     'Queue': 'SPYTL',
-     'State': 'IN RMA',
-     'Title': 'Bulk 1',
-     'Type': 'Network',
-     'CustomerUser': 'ytl.asset',
+     'Queue': 'Raw',
+     'State': 'New',
+     'Title': 'Python-OTRS',
+     'Type': 'Software',
+     'CustomerUser': 'pritish.pattanaik',
      'Priority': '3 normal'
   },
   'Article': { 
@@ -55,7 +58,7 @@ ticket = {
 }
 
 ticketid = session.createticket(ticket)
-
+```
 
 
 
