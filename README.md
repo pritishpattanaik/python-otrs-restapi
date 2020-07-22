@@ -22,10 +22,9 @@ config = {
 ### example code to use Python warapper for OTRS 5 APIimport otrsapi and otrsconfig module
 
 ```python
-import requests
 from otrsconfig import config
-from pprint import pprint
 import json
+from otrsapi import otrsapi
 
 # create a otrs session 
 session = otrsapi()
